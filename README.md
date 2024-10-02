@@ -10,22 +10,19 @@ Try it on in [Google Colab](https://colab.research.google.com/drive/1OyomQe5pHaD
 
 ### Installation
 
-1. Install Python 3.10
-2. Create a Python virtual environment and activate it.
-	- Linux
-		```
-		python3.10 -m venv venv && . venv/bin/activate
-		```
-	- Windows
-		```
-		py -3.10 -m venv venv && venv\Scripts\activate.bat
-		```
-	- You should now see `(venv)` at the start of the command prompt.
-3. Install the renderer package. To install the renderer package use this command.
-	```
-	pip install --upgrade --force-reinstall git+https://github.com/WoWs-Builder-Team/minimap_renderer.git
-	```
-4. You're all set.
+1.拉取docker镜像
+```
+docker pull mackerelfish/wows_minimap_renderer:latest
+```
+2.启动docker容器
+```
+docker run -d \
+-p 11452:11452 \
+--name wows_minimap_renderer \
+--restart=always \
+mackerelfish/wows_minimap_renderer:latest
+```
+3.替换配置里面ip为宿主机内网ip以防docker访问失败，端口号为11452，即可使用
 
 ### Usage
 Replays can be rendered with `render` module. The full usage is:

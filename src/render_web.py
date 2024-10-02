@@ -16,10 +16,19 @@ from replay_parser import ReplayParser
 app = FastAPI()
 security = HTTPBasic()
 
+# 指定 JSON 文件的名称
+_file_name = 'token.json'  # 将此处替换为您的 JSON 文件名
+
+# 获取当前目录
+_current_directory = os.getcwd()
+
+# 组合成完整的文件路径
+_file_path = os.path.join(_current_directory, _file_name)
+
 def get_current_username(
         credentials: HTTPBasicCredentials = Depends(security),
 ):
-    with open(os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + "/token.json", 'r', encoding='utf8') as json_f:
+    with open(_file_path, 'r', encoding='utf8') as json_f:
         json_data = json.load(json_f)
 
     current_username_bytes = credentials.username.encode("utf8")

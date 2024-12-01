@@ -8,6 +8,10 @@ Minimap Renderer parses World of Warships replays to create a timelapse video th
 
 Try it on in [Google Colab](https://colab.research.google.com/drive/1OyomQe5pHaDDozpt0rs9JMg54No8QMjE?usp=sharing)
 
+## minimap_renderer 项目的web服务支持
+
+web文件参考自https://github.com/JustOneSummer/minimap_renderer_web
+
 ### Installation
 
 1.拉取docker镜像

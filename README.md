@@ -20,6 +20,11 @@ Try it on in [Google Colab](https://colab.research.google.com/drive/1OyomQe5pHaD
 ```
 docker pull mackerelfish/wows_minimap_renderer:latest
 ```
+国内用户连不上官方docker源可使用腾讯云镜像仓库下载并添加镜像别名
+```
+docker pull ccr.ccs.tencentyun.com/mackerel/wows:wows-render
+docker tag ccr.ccs.tencentyun.com/mackerel/wows:wows-render mackerelfish/wows_minimap_renderer:latest
+```
 2.启动docker容器
 ```
 docker run -d \

@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set environment variables
+        run: echo "DOCKER_IMAGE_TAG=mackerelfish/wows_minimap_renderer:latest" >> $GITHUB_ENV
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -24,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: mackerelfish/wows_minimap_renderer:latest
+          tags: ${{ env.DOCKER_IMAGE_TAG }}  # 使用环境变量

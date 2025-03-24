@@ -14,7 +14,9 @@ Try it on in [Google Colab](https://colab.research.google.com/drive/1OyomQe5pHaD
 
 服务端启动文件render_web.py参考自https://github.com/JustOneSummer/minimap_renderer_web
 
-本项目为窝窝屎水表机器人HikariBot的额外功能支持，使用前请先安装https://github.com/benx1n/HikariBot
+本项目为窝窝屎水表机器人HikariBot的额外功能支持，使用前请先安装HikariBot
+Nonebot2版本HikariBot https://github.com/benx1n/HikariBot
+Nonebot1版本HikariBot https://github.com/benx1n/wows-stats-bot
 
 ### Installation
 

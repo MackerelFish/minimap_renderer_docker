@@ -31,11 +31,12 @@ docker pull mackerelfish/wows_minimap_renderer:latest
 docker pull ccr.ccs.tencentyun.com/mackerel/wows:wows-render
 docker tag ccr.ccs.tencentyun.com/mackerel/wows:wows-render mackerelfish/wows_minimap_renderer:latest
 ```
-2.启动docker容器
+2.启动docker容器，-v映射你自己的文件路径
 ```
 docker run -d \
 -p 11452:11452 \
 --name wows_minimap_renderer \
+-v /{your own path}/minimap_render/temp/:/minimap_render/temp/ \
 --restart=always \
 mackerelfish/wows_minimap_renderer:latest
 ```

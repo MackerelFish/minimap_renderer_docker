@@ -16,12 +16,12 @@ from replay_unpack.core.entity_def.data_types.nested_types import (
 class NestedProperty(PrettyPrintObjectMixin):
     def __init__(self, stream):
         (self.entity_id,) = struct.unpack("I", stream.read(4))
-        self.is_slice = struct.unpack("b", stream.read(1))[0] == 1
-        (self.payload_size,) = struct.unpack("b", stream.read(1))
+        self.is_slice = struct.unpack("B", stream.read(1))[0] == 1
+        (self.payload_size,) = struct.unpack("B", stream.read(1))
 
         self.u = stream.read(3)  # unknown
         self.payload = stream.read()
-        assert len(self.payload) == self.payload_size
+        assert len(self.payload) == self.payload_size, f"Expected {self.payload_size} bytes, got {self.payload}"
 
     def read_and_apply(self, entity):
         bit_reader = BitReader(self.payload)

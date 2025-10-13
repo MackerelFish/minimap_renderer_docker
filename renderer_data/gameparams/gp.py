@@ -23,7 +23,7 @@ def get_data(gp_type: str):
         gp_data: bytes = zlib.decompress(gp_data)
         gp_data_dict: dict = RenameUnpickler(
             io.BytesIO(gp_data), encoding="latin1"
-        ).load()
+        ).load()[""]
     return filter(
-        lambda g: g.typeinfo.type == gp_type, gp_data_dict[0].values()
+        lambda g: g.typeinfo.type == gp_type, gp_data_dict.values()
     )

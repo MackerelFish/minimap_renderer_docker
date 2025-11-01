@@ -48,6 +48,7 @@ from src.replay_parser import ReplayParser
         "replays/147.wowsreplay",
         "replays/148.wowsreplay",
         "replays/149.wowsreplay",
+        "replays/1410.wowsreplay",
         "replays/languages.wowsreplay",
     ],
 )
